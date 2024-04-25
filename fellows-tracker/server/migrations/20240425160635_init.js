@@ -1,7 +1,3 @@
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
 exports.up = async function (knex) {
   return knex.schema.alterTable('posts', function (table) {
     table.dropColumn('content');
@@ -9,10 +5,7 @@ exports.up = async function (knex) {
   });
 };
 
-/**
- * @param { import("knex").Knex } knex
- * @returns { Promise<void> }
- */
+// notice how the `down` function undoes the `up` function's changes
 exports.down = async function (knex) {
   knex.schema.alterTable('posts', function (table) {
     table.dropColumn('post_content');

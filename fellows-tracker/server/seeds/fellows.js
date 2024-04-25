@@ -4,8 +4,8 @@
  */
 exports.seed = async function (knex) {
   // Deletes ALL existing entries
-  await knex('posts').del()
-  await knex('fellows').del()
+  await knex('posts').del()//delete all posts
+  await knex('fellows').del()//delete all fellows
 
   // Reset the auto increment so ids start back at 1
   await knex.raw('ALTER SEQUENCE posts_id_seq RESTART WITH 1')
